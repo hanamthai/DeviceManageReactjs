@@ -6,7 +6,7 @@ class Home extends Component {
 
     render() {
         const { isLoggedIn } = this.props;
-        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/v1/login';
+        let linkToRedirect = isLoggedIn ? '/system/user-manage' : '/login';
 
         return (
             <Redirect to={linkToRedirect} />

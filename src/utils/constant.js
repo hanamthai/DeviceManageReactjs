@@ -1,8 +1,8 @@
 export const path = {
-    HOME: '/v1/home',
-    LOGIN: '/v1/login',
-    LOG_OUT: '/v1/logout',
-    SYSTEM: '/v1/system'
+    HOME: '/home',
+    LOGIN: '/login',
+    LOG_OUT: '/logout',
+    SYSTEM: '/system'
 };
 
 export const languages = {

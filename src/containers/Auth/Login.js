@@ -4,8 +4,9 @@ import { push } from "connected-react-router";
 
 import * as actions from "../../store/actions";
 import './Login.scss';
-import { FormattedMessage } from 'react-intl';
+// import { FormattedMessage } from 'react-intl';
 import { handleLogin } from '../../services/userService';
+import Loader from '../../components/Loader'
 
 class Login extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class Login extends Component {
             username: "",
             password: "",
             isShowPassword: false,
-            errMessage: ""
+            errMessage: "",
+            isLoading: false,
         }
     }
 
@@ -44,11 +46,14 @@ class Login extends Component {
             })
         } else{
             try {
+                this.setState({isLoading: true})
                 let data = await handleLogin(this.state.username, this.state.password);
                 if (data != "") {
+                    this.setState({isLoading: false})
                     this.props.userLoginSuccess(data)
                 }
             } catch(error){
+                this.setState({isLoading: false})
                 if (error.response) {
                     if (error.response.data) {
                         this.setState({
@@ -69,6 +74,7 @@ class Login extends Component {
     render() {
         return (
             <div className='login-background'>
+                {this.state.isLoading && <Loader></Loader>}
                 <div className='login-container'>
                     <div className='login-content row'>
                         <div className='col-12 login-text'>Login</div>
@@ -86,7 +92,11 @@ class Login extends Component {
                             </div>
                         </div>
                         <div className='col-12' style={{color:'red'}}>{this.state.errMessage}</div>
-                        <div className='col-12'><button className='btn-login' onClick={() => {this.handleLogin()}}>Login</button></div>
+                        <div className='col-12'>
+                            <button className='btn-login' onClick={() => {this.handleLogin()}}>
+                                Login
+                            </button>
+                        </div>
                         <div className='col-12'>
                             <span>Forgot your password?</span>
                         </div>
