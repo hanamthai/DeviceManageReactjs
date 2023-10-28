@@ -5,10 +5,12 @@ import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
 import { adminMenu } from './menuApp';
 import './Header.scss';
+// import { FormattedMessage } from 'react-intl';
 
 class Header extends Component {
 
     render() {
+        console.log("aaaa:", this.props)
         const { processLogout } = this.props;
 
         return (
@@ -30,7 +32,8 @@ class Header extends Component {
 
 const mapStateToProps = state => {
     return {
-        isLoggedIn: state.user.isLoggedIn
+        isLoggedIn: state.user.isLoggedIn,
+        // language: state.app.language
     };
 };
 

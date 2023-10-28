@@ -1,4 +1,13 @@
 {
+    "user-manage": {
+        "title": "QUẢN LÝ NGƯỜI DÙNG TRONG HỆ THỐNG",
+        "btn-add-user": "Thêm mới",
+        "email": "Thư điện tử",
+        "full-name": "Họ và tên",
+        "device": "Thiết bị",
+        "status": "Trạng thái",
+        "action": "Thực thi"
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",

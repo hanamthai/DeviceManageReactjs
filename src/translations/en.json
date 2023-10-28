@@ -1,4 +1,13 @@
 {
+    "user-manage": {
+        "title": "MANAGE USERS IN SYSTEM",
+        "btn-add-user": "Add new user",
+        "email": "Email",
+        "full-name": "FullName",
+        "device": "Device",
+        "status": "Status",
+        "action": "Action"
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
