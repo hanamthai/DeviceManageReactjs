@@ -73,13 +73,14 @@ class ModelEditUser extends Component {
                     toggle={() => this.toggle()} 
                     className={'modal-user-container'}
                     size='lg'
-
                 >
-                <ModalHeader toggle={() => this.toggle()}>Edit User Information</ModalHeader>
+                <ModalHeader toggle={() => this.toggle()}>
+                    <FormattedMessage id="user-manage.form-edit.title"/>
+                </ModalHeader>
                 <ModalBody>
                     <div className='modal-user-body'>
                         <div className='input-container'>
-                            <label>FullName</label>
+                            <label><FormattedMessage id="user-manage.form-edit.full-name"/></label>
                             <input 
                                 type='text' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "fullName")})}
@@ -87,7 +88,7 @@ class ModelEditUser extends Component {
                             />
                         </div>
                         <div className='input-container'>
-                            <label>Password</label>
+                            <label><FormattedMessage id="user-manage.form-edit.password"/></label>
                             <input 
                                 type='password' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "password")})}
@@ -96,7 +97,7 @@ class ModelEditUser extends Component {
                             />
                         </div>
                         <div className='input-container max-width-input'>
-                            <label>Email</label>
+                            <label><FormattedMessage id="user-manage.form-edit.email"/></label>
                             <input 
                                 type='text' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "email")})}
@@ -111,10 +112,10 @@ class ModelEditUser extends Component {
                     color="primary px-3" 
                     onClick={() => this.handleEditUser()}
                 >
-                    Save
+                    <FormattedMessage id="user-manage.form-edit.btn-save"/>
                 </Button>{' '}
                 <Button color="secondary px-3" onClick={() => this.toggle()}>
-                    Close
+                    <FormattedMessage id="user-manage.form-edit.btn-close"/>
                 </Button>
                 </ModalFooter>
             </Modal>
@@ -124,6 +125,7 @@ class ModelEditUser extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language
     };
 };
 

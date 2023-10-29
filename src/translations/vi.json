@@ -2,11 +2,27 @@
     "user-manage": {
         "title": "QUẢN LÝ NGƯỜI DÙNG TRONG HỆ THỐNG",
         "btn-add-user": "Thêm mới",
-        "email": "Thư điện tử",
+        "email": "Email",
         "full-name": "Họ và tên",
         "device": "Thiết bị",
         "status": "Trạng thái",
-        "action": "Thực thi"
+        "action": "Thực thi",
+        "form-create": {
+            "title": "Tạo mới người dùng",
+            "full-name": "Họ và tên",
+            "password": "Mật khẩu",
+            "email": "Email",
+            "btn-add": "Thêm mới",
+            "btn-close": "Đóng"
+        },
+        "form-edit": {
+            "title": "Chỉnh sửa thông tin người dùng",
+            "full-name": "Họ và tên",
+            "password": "Mật khẩu",
+            "email": "Email",
+            "btn-save": "Lưu",
+            "btn-close": "Đóng"
+        }
     },
     "common": {
         "add": "Thêm",

@@ -58,11 +58,13 @@ class ModalUser extends Component {
                     className={'modal-user-container'}
                     size='lg'
                 >
-                <ModalHeader toggle={() => this.toggle()}>Create New User</ModalHeader>
+                <ModalHeader toggle={() => this.toggle()}>
+                    <FormattedMessage id="user-manage.form-create.title"/>
+                </ModalHeader>
                 <ModalBody>
                     <div className='modal-user-body'>
                         <div className='input-container'>
-                            <label>FullName</label>
+                            <label><FormattedMessage id="user-manage.form-create.full-name"/></label>
                             <input 
                                 type='text' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "fullName")})}
@@ -70,7 +72,7 @@ class ModalUser extends Component {
                             />
                         </div>
                         <div className='input-container'>
-                            <label>Password</label>
+                            <label><FormattedMessage id="user-manage.form-create.password"/></label>
                             <input 
                                 type='password' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "password")})}
@@ -78,7 +80,7 @@ class ModalUser extends Component {
                             />
                         </div>
                         <div className='input-container max-width-input'>
-                            <label>Email</label>
+                            <label><FormattedMessage id="user-manage.form-create.email"/></label>
                             <input 
                                 type='text' 
                                 onChange={((event) => {this.handleOnChangeInput(event, "email")})}
@@ -92,10 +94,10 @@ class ModalUser extends Component {
                     color="primary px-3" 
                     onClick={() => this.handleCreateNewUser()}
                 >
-                    Add User
+                    <FormattedMessage id="user-manage.form-create.btn-add"/>
                 </Button>{' '}
                 <Button color="secondary px-3" onClick={() => this.toggle()}>
-                    Close
+                <FormattedMessage id="user-manage.form-create.btn-close"/>
                 </Button>
                 </ModalFooter>
             </Modal>
@@ -106,6 +108,7 @@ class ModalUser extends Component {
 
 const mapStateToProps = state => {
     return {
+        language: state.app.language
     };
 };
 

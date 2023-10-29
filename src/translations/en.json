@@ -6,7 +6,23 @@
         "full-name": "FullName",
         "device": "Device",
         "status": "Status",
-        "action": "Action"
+        "action": "Action",
+        "form-create": {
+            "title": "Create New User",
+            "full-name": "FullName",
+            "password": "Password",
+            "email": "Email",
+            "btn-add": "Add User",
+            "btn-close": "Close"
+        },
+        "form-edit": {
+            "title": "Edit User Information",
+            "full-name": "FullName",
+            "password": "Password",
+            "email": "Email",
+            "btn-save": "Save",
+            "btn-close": "Close"
+        }
     },
     "common": {
         "add": "Add",
