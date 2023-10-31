@@ -66,11 +66,19 @@ const handleGetWebHistory = (childID, deviceID, day) => {
     )
 }
 
+const handleGetKeyboardLog = (childID, deviceID, day) => {
+    let access_token = getAccessToken()
+    return axios.get(`v1/parents/keyboard-log/${childID}/${deviceID}/${day}`,
+        { headers: {'Content-Type': 'application/json', "Authorization" : `Bearer ${access_token}` }}
+    )
+}
+
 export { 
     handleLogin, 
     handleUserInfo, 
     handleCreateNewUserService, 
     handleBlockUserService,
     handleEditUserService,
-    handleGetWebHistory
+    handleGetWebHistory,
+    handleGetKeyboardLog
 }

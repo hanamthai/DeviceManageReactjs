@@ -40,6 +40,22 @@
             "day": "day"
         }
     },
+    "keyboard-log": {
+        "title": "MANAGE USER KEYBOARD LOG",
+        "key-stroke": "Search content",
+        "total-visit": "Total visit",
+        "created-at": "Access time",
+        "filter": {
+            "child": "Children",
+            "select-child": "Select child",
+            "device": "Devices",
+            "select-device": "Select device",
+            "access-day": "Access days",
+            "select-day": "Select day",
+            "btn-search": "Search",
+            "day": "day"
+        }
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",

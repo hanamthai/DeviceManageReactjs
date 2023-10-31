@@ -40,6 +40,22 @@
             "day": "ngày"
         }
     },
+    "keyboard-log": {
+        "title": "QUẢN LÝ NHẬT KÝ BÀN PHÍM",
+        "key-stroke": "Nội dung tìm kiếm",
+        "total-visit": "Số lần truy cập",
+        "created-at": "Thời điểm truy cập",
+        "filter": {
+            "child": "Con cái",
+            "select-child": "Chọn con cái",
+            "device": "Thiết bị",
+            "select-device": "Chọn thiết bị",
+            "access-day": "Ngày truy cập",
+            "select-day": "Chọn ngày truy cập",
+            "btn-search": "Tìm kiếm",
+            "day": "ngày"
+        }
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
