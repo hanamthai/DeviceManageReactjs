@@ -6,8 +6,8 @@ import lodash from 'lodash'
 
 class ModelEditUser extends Component {
 
-    constructor(pros) {
-        super(pros);
+    constructor(props) {
+        super(props);
         this.state = {
             isOpen: false,
             id: '',

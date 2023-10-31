@@ -4,7 +4,7 @@ import { push } from "connected-react-router";
 
 import * as actions from "../../store/actions";
 import './Login.scss';
-// import { FormattedMessage } from 'react-intl';
+import { FormattedMessage } from 'react-intl';
 import { handleLogin } from '../../services/userService';
 import Loader from '../../components/Loader'
 
@@ -77,15 +77,15 @@ class Login extends Component {
                 {this.state.isLoading && <Loader></Loader>}
                 <div className='login-container'>
                     <div className='login-content row'>
-                        <div className='col-12 login-text'>Login</div>
+                        <div className='col-12 login-text'><FormattedMessage id='login.login'/></div>
                         <div className='col-12 form-group login-input'>
-                            <label className='login-label-text'>Username:</label>
-                            <input type='text' className='form-control' placeholder='Enter your username' onChange={(event) => this.handleOnChangeUsernameInput(event)}/>
+                            <label className='login-label-text'><FormattedMessage id='login.username'/>:</label>
+                            <input type='text' className='form-control' placeholder='Nhập tài khoản của bạn' onChange={(event) => this.handleOnChangeUsernameInput(event)}/>
                         </div>
                         <div className='col-12 form-group login-input'>
-                            <label className='login-label-text'>Password:</label>
+                            <label className='login-label-text'><FormattedMessage id='login.password'/>:</label>
                             <div className='custom-input-password'>
-                                <input type={this.state.isShowPassword? 'text': 'password'} className='form-control' placeholder='Enter your password' onChange={(event) => this.handleOnChangePasswordInput(event)}/>
+                                <input type={this.state.isShowPassword? 'text': 'password'} className='form-control' placeholder='Nhập mật khẩu của bạn' onChange={(event) => this.handleOnChangePasswordInput(event)}/>
                                 <span onClick={() => this.handleShowHidePassword()}>
                                     <i className={this.state.isShowPassword? 'far fa-eye': 'far fa-eye-slash'}></i>
                                 </span>
@@ -94,11 +94,11 @@ class Login extends Component {
                         <div className='col-12' style={{color:'red'}}>{this.state.errMessage}</div>
                         <div className='col-12'>
                             <button className='btn-login' onClick={() => {this.handleLogin()}}>
-                                Login
+                                <FormattedMessage id='login.login'/>
                             </button>
                         </div>
                         <div className='col-12'>
-                            <span>Forgot your password?</span>
+                            <span><FormattedMessage id='login.forgot-password'/>?</span>
                         </div>
                     </div>
                 </div>

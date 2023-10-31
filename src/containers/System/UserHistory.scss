@@ -1,0 +1,91 @@
+.user-history-body{
+  overflow: scroll;
+  height: 683px;
+}
+
+
+#users {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  #users th, #users td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100px; /* Độ rộng tối đa của cột */
+  }
+  
+  #users th {
+    background-color: #f2f2f2;
+  }
+  
+  #users th:nth-child(1),
+  #users td:nth-child(1) {
+    width: 50%;
+    white-space: nowrap; /* Ngăn cột "URL" tràn cột */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Hiển thị "..." nếu nội dung quá dài */
+  }
+  
+  #users th:nth-child(2),
+  #users td:nth-child(2) {
+    width: 25%;
+  }
+  
+  #users th:nth-child(3),
+  #users td:nth-child(3) {
+    width: 25%;
+  }
+
+
+
+
+.user-history-container{
+
+    .filter-history{
+        display: flex;
+        margin-top: 20px;
+
+        .filter-name {
+            margin-top: 10px;
+            font-size: 20px;
+            margin-left: 100px;
+        }
+
+        .select-dropdown{
+            font-size: 20px;
+            margin: 10px 9px
+        }
+
+        .div-search {
+            display: flex;
+            font-size: 20px;
+            color: white;
+            background: #1795e6;
+            margin-left: 40px;
+
+            .btn-search{
+                height: 50px;
+                width: 50px;
+                border: none;
+                outline: none;
+                background: transparent;
+                color: white;
+            }
+
+            .search-name {
+                margin-top: 10px;
+                margin-right: 10px;
+                cursor: pointer;
+            }
+
+            &:hover{
+                background: #0071ba;
+                }
+        }
+    }
+}

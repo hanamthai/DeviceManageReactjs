@@ -25,6 +25,12 @@
     .language-buttons {
         display: flex;
 
+        .welcome{
+            margin-right: 10px;
+            margin-top: 9px;
+            font-size: 15px;
+        }
+
         .btn-language {
             background: none;
             border: none;

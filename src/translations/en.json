@@ -24,6 +24,22 @@
             "btn-close": "Close"
         }
     },
+    "history-web": {
+        "title": "MANAGE USER WEBSITE HISTORY",
+        "url": "Uniform resource locator(URL)",
+        "total-visit": "Total visit",
+        "created-at": "Access time",
+        "filter": {
+            "child": "Children",
+            "select-child": "Select child",
+            "device": "Devices",
+            "select-device": "Select device",
+            "access-day": "Access days",
+            "select-day": "Select day",
+            "btn-search": "Search",
+            "day": "day"
+        }
+    },
     "common": {
         "add": "Add",
         "edit": "Edit",
@@ -42,22 +58,27 @@
         "forbiden-request": "Invalid input data",
         "fail-to-load-all-code": "Fail to load data from allcode",
         "sum": "Sum",
-        "date-range-invalid": "Date range invalid"
+        "date-range-invalid": "Date range invalid",
+        "welcome": "Welcome: "
     },
     "login": {
         "login": "Login",
         "username": "Username",
         "password": "Password",
+        "forgot-password": "Forgot your password",
+        "input-username": "Enter your username",
+        "input-password": "Enter your password",
         "userpass-wrong": "Invalid username or password!"
     },
     "menu": {
         "system": {
             "header": "System",
             "system-administrator": {
-                "header": "System Administrator",
+                "header": "System User",
                 "user-manage": "User manage",
-                "product-manage": "Package manage",
-                "register-package-group-or-account": "Register service package for group/account"
+                "user-history": "Web history manage",
+                "user-keyboard-log": "Keyboard log manage",
+                "user-block-web": "Web block manage"
             },
             "system-parameter": {
                 "header": "System-parameter"

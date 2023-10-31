@@ -161,7 +161,6 @@ class UserManage extends Component {
     }
 
     render() {
-        console.log("here:", this.props)
         let arrayUsers = this.state.arrUsers;
         return (
             <div className="users-container">
@@ -186,9 +185,6 @@ class UserManage extends Component {
                     <button className='btn btn-primary px-3' onClick={() => this.handleAddNewUser()}>
                         <i className="fas fa-user-plus px-2"></i><FormattedMessage id="user-manage.btn-add-user"/>
                     </button>
-                </div>
-                <div>
-                    {/* {this.state.isToast && notify} */}
                 </div>
                 <div className='users-table mt-4 mx-1'>
                 <table id="customers">

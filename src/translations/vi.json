@@ -24,6 +24,22 @@
             "btn-close": "Đóng"
         }
     },
+    "history-web": {
+        "title": "QUẢN LÝ LỊCH SỬ DUYỆT WEB CỦA NGƯỜI DÙNG",
+        "url": "Địa chỉ trang web(URL)",
+        "total-visit": "Số lần truy cập",
+        "created-at": "Thời điểm truy cập",
+        "filter": {
+            "child": "Con cái",
+            "select-child": "Chọn con cái",
+            "device": "Thiết bị",
+            "select-device": "Chọn thiết bị",
+            "access-day": "Ngày truy cập",
+            "select-day": "Chọn ngày truy cập",
+            "btn-search": "Tìm kiếm",
+            "day": "ngày"
+        }
+    },
     "common": {
         "add": "Thêm",
         "edit": "Sửa",
@@ -42,22 +58,27 @@
         "forbiden-request": "Thông tin truyền vào không hợp lệ",
         "fail-to-load-all-code": "Không thể tải về dữ liệu allcode",
         "sum": "Tổng",
-        "date-range-invalid": "Khoảng thời gian không hợp lệ"
+        "date-range-invalid": "Khoảng thời gian không hợp lệ",
+        "welcome": "Xin chào: "
     },
     "login": {
         "login": "Đăng nhập",
         "username": "Tên đăng nhập",
         "password": "Mật khẩu",
+        "forgot-password": "Quên mật khẩu",
+        "input-username": "Nhập tên đăng nhập của bạn",
+        "input-password": "Nhập mật khẩu của bạn",
         "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
     },
     "menu": {
         "system": {
             "header": "Hệ thống",
             "system-administrator": {
-                "header": "Quản trị hệ thống",
-                "user-manage": "Quản lý người sử dụng",
-                "product-manage": "Quản lý gói",
-                "register-package-group-or-account": "Đăng ký gói dịch vụ cho nhóm/tài khoản"
+                "header": "Quản trị người dùng",
+                "user-manage": "Quản lý người dùng",
+                "user-history": "Quản lý lịch sử duyệt web",
+                "user-keyboard-log": "Quản lý nhật ký bàn phím",
+                "user-block-web": "Quản lý chặn trang web"
             },
             "system-parameter": {
                 "header": "Tham số hệ thống"

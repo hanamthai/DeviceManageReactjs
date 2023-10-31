@@ -5,8 +5,8 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
 class ModalUser extends Component {
 
-    constructor(pros) {
-        super(pros);
+    constructor(props) {
+        super(props);
         this.state = {
             isOpen: false,
             fullName: '',

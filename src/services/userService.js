@@ -59,10 +59,18 @@ const handleEditUserService = (data) => {
     })
 }
 
+const handleGetWebHistory = (childID, deviceID, day) => {
+    let access_token = getAccessToken()
+    return axios.get(`v1/parents/web-history/${childID}/${deviceID}/${day}`,
+        { headers: {'Content-Type': 'application/json', "Authorization" : `Bearer ${access_token}` }}
+    )
+}
+
 export { 
     handleLogin, 
     handleUserInfo, 
     handleCreateNewUserService, 
     handleBlockUserService,
-    handleEditUserService
+    handleEditUserService,
+    handleGetWebHistory
 }
