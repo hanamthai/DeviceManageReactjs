@@ -6,7 +6,8 @@ import Loader from '../../components/Loader'
 import {processLogout} from '../../store/actions/userActions'
 import {
     handleUserInfo,
-    handleGetWebHistory
+    handleGetWebHistory,
+    handleTopWebHistory
 } from '../../services/userService'
 
 
@@ -67,6 +68,38 @@ class UserHistory extends Component {
             else{
                 this.setState({isLoading: true})
                 const resp = await handleGetWebHistory(Number(childID),Number(deviceID),Number(day));
+                if (resp.data) {
+                    this.setState({isLoading: false})
+                    this.setState({
+                        arrHistories: resp.data
+                    })
+                }
+            }
+        } catch(error){
+            this.setState({isLoading: false})
+            if (error.response) {
+                if (error.response.data) {
+                    if (error.response.data.msg === 'Token has expired'){
+                        alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
+                        this.props.LoginAgain()
+                    } else if (error.response.status != 200){
+                        alert(error.response.data.message)
+                    }
+                }
+            }
+        }
+    }
+
+    getTopHistoryWeb = async () => {
+        try {
+            let childID = this.state.selectChild
+            // validate input
+            if (childID == "") {
+                alert("Please select child to filter!!")
+            }
+            else{
+                this.setState({isLoading: true, selectDevice: "", selectDay: ""})
+                const resp = await handleTopWebHistory(Number(childID));
                 if (resp.data) {
                     this.setState({isLoading: false})
                     this.setState({
@@ -164,7 +197,11 @@ class UserHistory extends Component {
                             <i class="fas fa-search px-2"></i>
                             <FormattedMessage id="history-web.filter.btn-search"/>
                         </button>
-                        
+                    </div>
+                    <div className='div-chart'>
+                        <button className='btn-chart' onClick={() => this.getTopHistoryWeb()}>
+                            <i class="fas fa-chart-line px-2"></i>
+                        </button>
                     </div>
                 </div>
 
@@ -188,7 +225,7 @@ class UserHistory extends Component {
                     })}
                     </tbody>
                     </table>
-                    </div>
+                </div>
                 </div>
             </div>
         )

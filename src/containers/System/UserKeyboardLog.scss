@@ -1,89 +1,88 @@
-.user-keyboard-log-body{
-    overflow: scroll;
-    height: 683px;
-  }
-  
-  
-  #users {
-      width: 100%;
-      border-collapse: collapse;
+.user-keyboard-log-body {
+  overflow: scroll;
+  height  : 605px;
+}
+
+#users {
+  width          : 100%;
+  border-collapse: collapse;
+}
+
+#users th,
+#users td {
+  padding      : 8px;
+  text-align   : left;
+  border       : 1px solid #ddd;
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  max-width    : 100px;
+  /* Độ rộng tối đa của cột */
+}
+
+#users th {
+  background-color: #ddd;
+}
+
+#users tr:hover {
+  background-color: #f2f2f2;
+}
+
+#users th:nth-child(1),
+#users td:nth-child(1) {
+  width        : 65%;
+  white-space  : nowrap;
+  /* Ngăn cột "URL" tràn cột */
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  /* Hiển thị "..." nếu nội dung quá dài */
+}
+
+#users th:nth-child(2),
+#users td:nth-child(2) {
+  width: 10%;
+}
+
+#users th:nth-child(3),
+#users td:nth-child(3) {
+  width: 25%;
+}
+
+.user-keyboard-log-container {
+  .filter-keyboard-log {
+    display   : flex;
+    margin-top: 20px;
+
+    .filter-name {
+      margin-top : 10px;
+      font-size  : 15px;
+      margin-left: 50px;
     }
-    
-    #users th, #users td {
-      padding: 8px;
-      text-align: left;
-      border: 1px solid #ddd;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 100px; /* Độ rộng tối đa của cột */
+
+    .select-dropdown {
+      font-size: 15px;
+      margin   : 10px 9px;
     }
-    
-    #users th {
-      background-color: #ddd;
-    }
-  
-    #users tr:hover {background-color: #f2f2f2;}
-    
-    #users th:nth-child(1),
-    #users td:nth-child(1) {
-      width: 65%;
-      white-space: nowrap; /* Ngăn cột "URL" tràn cột */
-      overflow: hidden;
-      text-overflow: ellipsis; /* Hiển thị "..." nếu nội dung quá dài */
-    }
-    
-    #users th:nth-child(2),
-    #users td:nth-child(2) {
-      width: 10%;
-    }
-    
-    #users th:nth-child(3),
-    #users td:nth-child(3) {
-      width: 25%;
-    }
-  
-  
-  
-  
-  .user-keyboard-log-container{
-  
-      .filter-keyboard-log{
-          display: flex;
-          margin-top: 20px;
-  
-          .filter-name {
-              margin-top: 10px;
-              font-size: 15px;
-              margin-left: 50px;
-          }
-  
-          .select-dropdown{
-              font-size: 15px;
-              margin: 10px 9px
-          }
-  
-          .div-search {
-              display: flex;
-              font-size: 15px;
-              color: white;
-              background: #1795e6;
-              margin-left: 40px;
-              display: flex;
-  
-              .btn-search{
-                  height: 41px;
-                  border: none;
-                  outline: none;
-                  background: transparent;
-                  color: white;
-                  margin-right: 10px;
-              }
-  
-              &:hover{
-                  background: #0071ba;
-                  }
-          }
+
+    .div-search {
+      display    : flex;
+      font-size  : 15px;
+      color      : white;
+      background : #1795e6;
+      margin: 0px 40px;
+
+      .btn-search {
+        height      : 41px;
+        border      : none;
+        outline     : none;
+        background  : transparent;
+        color       : white;
+        margin-right: 10px;
       }
+
+      &:hover {
+        background: #0071ba;
+      }
+    }
   }
-  
+}

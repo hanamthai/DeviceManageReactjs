@@ -1,4 +1,4 @@
-export const adminMenu = [
+export const userMenu = [
     { //hệ thống
         name: 'menu.system.header', menus: [
             {

@@ -5,6 +5,7 @@ import UserManage from '../containers/System/UserManage';
 import UserHistory from '../containers/System/UserHistory';
 import UserKeyboardLog from '../containers/System/UserKeyboardLog';
 import UserBlockWebsite from '../containers/System/UserBlockWebsite';
+import AdminManage from '../containers/System/AdminManage';
 
 class System extends Component {
     render() {
@@ -17,6 +18,7 @@ class System extends Component {
                         <Route path="/system/user-history" component={UserHistory} />
                         <Route path="/system/user-keyboard-log" component={UserKeyboardLog} />
                         <Route path="/system/user-block-website" component={UserBlockWebsite} />
+                        <Route path="/system/admin-manage" component={AdminManage}/>
                         <Route component={() => { return (<Redirect to={systemMenuPath} />) }} />
                     </Switch>
                 </div>

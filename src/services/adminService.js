@@ -1,19 +1,17 @@
 import axios from '../axios';
-import * as queryString from 'query-string';
 
-const adminService = {
+const getAccessToken = () => {
+    let localStoreObj = JSON.parse(localStorage.getItem('persist:user'))
+    let userInfoJson = localStoreObj.userInfo
+    let access_token = JSON.parse(userInfoJson).access_token
+    return access_token
+}
 
-    /**
-     * Đăng nhập hệ thống
-     * {
-     *  "username": "string",
-     *  "password": "string"
-     * }
-     */
-    login(loginBody) {
-        return axios.post(`/admin/login`, loginBody)
-    },
+const handleParentInfo = () => {
+    let access_token = getAccessToken()
+    return axios.get('v1/admins', 
+        { headers: {'Content-Type': 'application/json', "Authorization" : `Bearer ${access_token}` }}
+    )
+}
 
-};
-
-export default adminService;
+export {handleParentInfo}

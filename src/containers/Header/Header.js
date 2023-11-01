@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 
 import * as actions from "../../store/actions";
 import Navigator from '../../components/Navigator';
-import { adminMenu } from './menuApp';
+import { userMenu } from './menuApp';
+import { adminMenu } from './menuAdmin';
 import './Header.scss';
 import {Languages} from '../../utils/constant'
 import {changeLanguageApp} from '../../store/actions'
@@ -20,9 +21,14 @@ class Header extends Component {
         return (
             <div className="header-container">
                 {/* thanh navigator */}
-                <div className="header-tabs-container">
-                    <Navigator menus={adminMenu} />
-                </div>
+                {userInfo && userInfo.role_id == 1 ? 
+                    <div className="header-tabs-container">
+                        <Navigator menus={adminMenu} />
+                    </div> :
+                    <div className="header-tabs-container">
+                        <Navigator menus={userMenu} />
+                    </div>
+                }
 
                 {/* nút thay đổi ngôn ngữ */}
                 <div className="language-buttons">

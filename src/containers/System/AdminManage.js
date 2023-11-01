@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
-import './UserManage.scss'
-import {handleUserInfo, 
+import './AdminManage.scss'
+import {handleParentInfo,
+        } from '../../services/adminService'
+import {
         handleCreateNewUserService,
         handleBlockUserService,
         handleEditUserService    
-        } from '../../services/userService'
+    } from '../../services/userService'
 import {processLogout} from '../../store/actions/userActions'
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../../components/Loader'
 import ModalUser from './ModalUser';
 import ModalEditUser from './ModalEditUser';
 
-class UserManage extends Component {
+class AdminManage extends Component {
 
     /** Life Cycle
      *  Run component
@@ -43,7 +45,7 @@ class UserManage extends Component {
     getAllUser = async () => {
         try {
             this.setState({isLoading: true})
-            const resp = await handleUserInfo();
+            const resp = await handleParentInfo();
             if (resp.data) {
                 this.setState({isLoading: false})
                 this.setState({
@@ -191,18 +193,14 @@ class UserManage extends Component {
                 <tr>
                     <th><FormattedMessage id="user-manage.email"/></th>
                     <th><FormattedMessage id="user-manage.full-name"/></th>
-                    <th><FormattedMessage id="user-manage.device"/></th>
                     <th><FormattedMessage id="user-manage.status"/></th>
                     <th><FormattedMessage id="user-manage.action"/></th>
                 </tr>
                 {arrayUsers && arrayUsers.map((item, index) => {
-                    let _devices =  item.devices.map(device => device.deviceName)
-                    let deviceNamesString = _devices.join(" | ")
                     return (
                         <tr>
                             <td>{item.email}</td>
                             <td>{item.fullName}</td>
-                            <td>{deviceNamesString}</td>
                             <td><i className={item.status === 'inactive'? 'fas fa-lock' : 'fas fa-unlock-alt'}></i></td>
                             <td>
                                 <button className='btn-edit'
@@ -238,4 +236,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(UserManage);
+export default connect(mapStateToProps, mapDispatchToProps)(AdminManage);

@@ -48,7 +48,7 @@ const handleBlockUserService = (childID) => {
 
 const handleEditUserService = (data) => {
     let access_token = getAccessToken()
-    return axios.post(`/v1/parents/edit-child/${data['id']}`,
+    return axios.post(`v1/parents/edit-child/${data['id']}`,
     {"fullName": data['fullName'], "password": data['password']},
     { 
         headers: {
@@ -73,6 +73,13 @@ const handleGetKeyboardLog = (childID, deviceID, day) => {
     )
 }
 
+const handleTopWebHistory = (childID) => {
+    let access_token = getAccessToken()
+    return axios.get(`v1/parents/top-visit-web/${childID}`,
+        { headers: {'Content-Type': 'application/json', "Authorization" : `Bearer ${access_token}` }}
+    )
+}
+
 export { 
     handleLogin, 
     handleUserInfo, 
@@ -80,5 +87,6 @@ export {
     handleBlockUserService,
     handleEditUserService,
     handleGetWebHistory,
-    handleGetKeyboardLog
+    handleGetKeyboardLog,
+    handleTopWebHistory
 }
