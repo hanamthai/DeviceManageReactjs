@@ -5,14 +5,14 @@ import './AdminManage.scss'
 import {handleParentInfo,
         } from '../../services/adminService'
 import {
-        handleCreateNewUserService,
-        handleBlockUserService,
-        handleEditUserService    
-    } from '../../services/userService'
+        // handleCreateNewUserService,
+        handleBlockParentService,
+        handleEditParentService    
+    } from '../../services/adminService'
 import {processLogout} from '../../store/actions/userActions'
 import 'react-toastify/dist/ReactToastify.css';
 import Loader from '../../components/Loader'
-import ModalUser from './ModalUser';
+// import ModalUser from './ModalUser';
 import ModalEditUser from './ModalEditUser';
 
 class AdminManage extends Component {
@@ -57,23 +57,23 @@ class AdminManage extends Component {
             this.setState({isLoading: false})
             if (error.response) {
                 if (error.response.data) {
-                    if (error.response.data.msg === 'Token has expired'){
+                    if (error?.response?.data?.msg === 'Token has expired'){
                         alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                         this.props.LoginAgain()
-                    } else if (error.response.status === 401){
-                        alert(error.response.data.message)
+                    } else if (error?.response?.status === 401){
+                        alert(error?.response?.data?.message)
                     }
                     else {
-                        this.setState({isToast: true, toastMsg: error.response.data.message})
+                        this.setState({isToast: true, toastMsg: error?.response?.data?.message})
                     }
                 }
             }
         }
     }
 
-    handleAddNewUser = () => {
-        this.setState({isOpenModal: true})
-    }
+    // handleAddNewUser = () => {
+    //     this.setState({isOpenModal: true})
+    // }
 
     toggleUserModal = () => {
         this.setState({
@@ -81,46 +81,46 @@ class AdminManage extends Component {
         })
     }
 
-    createNewUser = async (data) => {
-        try {
-            this.setState({isLoading: true})
-            let resp = await handleCreateNewUserService(data);
-            if (resp) {
-                await this.getAllUser();
-                this.setState({
-                    isOpenModal: false,
-                    isLoading: false
-                })
-            }
-        } catch(error) {
-            this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
-                alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
-                this.props.LoginAgain()
-            }
-            else if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
-            }
-        }
-    }
+    // createNewUser = async (data) => {
+    //     try {
+    //         this.setState({isLoading: true})
+    //         let resp = await handleCreateNewUserService(data);
+    //         if (resp) {
+    //             await this.getAllUser();
+    //             this.setState({
+    //                 isOpenModal: false,
+    //                 isLoading: false
+    //             })
+    //         }
+    //     } catch(error) {
+    //         this.setState({isLoading: false})
+    //         if (error?.response?.data?.msg === 'Token has expired'){
+    //             alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
+    //             this.props.LoginAgain()
+    //         }
+    //         else if (error?.response?.status != 200) {
+    //             alert("Error: " + error?.response?.data?.message)
+    //         }
+    //     }
+    // }
 
     handleBlockUser = async (data) => {
         try {
             this.setState({isLoading: true})
-            let childID = data.id
-            let resp = await handleBlockUserService(childID);
+            let parentID = data.id
+            let resp = await handleBlockParentService(parentID);
             if (resp) {
                 await this.getAllUser();
                 this.setState({isLoading: false})
             }
         } catch(error) {
             this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
+            if (error?.response?.data?.msg === 'Token has expired'){
                 alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                 this.props.LoginAgain()
             }
-            else if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
+            else if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
             }
         }
     }
@@ -141,7 +141,7 @@ class AdminManage extends Component {
     editUser = async (data) => {
         try {
             this.setState({isLoading: true})
-            let resp = await handleEditUserService(data);
+            let resp = await handleEditParentService(data);
             if (resp) {
                 await this.getAllUser();
                 this.setState({
@@ -151,12 +151,12 @@ class AdminManage extends Component {
             }
         } catch(error) {
             this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
+            if (error?.response?.data?.msg === 'Token has expired'){
                 alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                 this.props.LoginAgain()
             }
-            if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
+            if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
             }
         }
     }
@@ -166,11 +166,11 @@ class AdminManage extends Component {
         return (
             <div className="users-container">
                 {this.state.isLoading && <Loader></Loader>}
-                <ModalUser
+                {/* <ModalUser
                     isOpen={this.state.isOpenModal}
                     toggleUserManage={this.toggleUserModal}
                     createNewUser = {this.createNewUser}
-                />
+                /> */}
                 {this.state.isOpenModalEditUser && 
                     <ModalEditUser
                         isOpen={this.state.isOpenModalEditUser}
@@ -182,11 +182,11 @@ class AdminManage extends Component {
                 <div className='title text-center'>
                     <FormattedMessage id="user-manage.title"/>
                 </div>
-                <div className='mx-3'>
+                {/* <div className='mx-3'>
                     <button className='btn btn-primary px-3' onClick={() => this.handleAddNewUser()}>
                         <i className="fas fa-user-plus px-2"></i><FormattedMessage id="user-manage.btn-add-user"/>
                     </button>
-                </div>
+                </div> */}
                 <div className='users-table mt-4 mx-1'>
                 <table id="customers">
                 <tbody>

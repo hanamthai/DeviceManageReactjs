@@ -84,7 +84,9 @@
         "forgot-password": "Quên mật khẩu",
         "input-username": "Nhập tên đăng nhập của bạn",
         "input-password": "Nhập mật khẩu của bạn",
-        "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!"
+        "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!",
+        "register": "Đăng ký tài khoản",
+        "register-form-title": "Tạo mới tài khoản" 
     },
     "menu": {
         "system": {

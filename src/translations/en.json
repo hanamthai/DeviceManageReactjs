@@ -84,7 +84,9 @@
         "forgot-password": "Forgot your password",
         "input-username": "Enter your username",
         "input-password": "Enter your password",
-        "userpass-wrong": "Invalid username or password!"
+        "userpass-wrong": "Invalid username or password!",
+        "register": "Register an account",
+        "register-form-title": "Create new account" 
     },
     "menu": {
         "system": {

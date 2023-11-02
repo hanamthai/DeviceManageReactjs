@@ -7,6 +7,8 @@ import './Login.scss';
 import { FormattedMessage } from 'react-intl';
 import { handleLogin } from '../../services/userService';
 import Loader from '../../components/Loader'
+import ModalRegister from './ModalRegister';
+import {handleRegisterNewAccountService} from '../../services/adminService'
 
 class Login extends Component {
     constructor(props) {
@@ -17,6 +19,7 @@ class Login extends Component {
             isShowPassword: false,
             errMessage: "",
             isLoading: false,
+            isOpenModalRegister: false,
         }
     }
 
@@ -57,7 +60,7 @@ class Login extends Component {
                 if (error.response) {
                     if (error.response.data) {
                         this.setState({
-                            errMessage: error.response.data.message
+                            errMessage: error?.response?.data?.message
                         })
                     }
                 }
@@ -71,10 +74,48 @@ class Login extends Component {
         })
     }
 
+    toggleUserModal = () => {
+        this.setState({
+            isOpenModalRegister: !this.state.isOpenModalRegister
+        })
+    }
+
+    createNewUser = async (data) => {
+        try {
+            console.log("data:", data)
+            this.setState({isLoading: true})
+            let resp = await handleRegisterNewAccountService(data);
+            console.log("resp:", resp)
+            if (resp) {
+                this.setState({
+                    isOpenModalRegister: false,
+                    isLoading: false
+                })
+                alert("Đăng kí thành công, vui lòng đăng nhập để tiếp tục!!")
+            }
+        } catch(error) {
+            this.setState({isLoading: false})
+            if (error?.response?.data?.msg === 'Token has expired'){
+                alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
+                this.props.LoginAgain()
+            }
+            else if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
+            }
+        }
+    }
+
     render() {
         return (
             <div className='login-background'>
                 {this.state.isLoading && <Loader></Loader>}
+                {this.state.isOpenModalRegister && 
+                    <ModalRegister
+                        isOpen={this.state.isOpenModalRegister}
+                        toggleUserManage={this.toggleUserModal}
+                        createNewUser = {this.createNewUser}
+                    />
+                }
                 <div className='login-container'>
                     <div className='login-content row'>
                         <div className='col-12 login-text'><FormattedMessage id='login.login'/></div>
@@ -97,8 +138,9 @@ class Login extends Component {
                                 <FormattedMessage id='login.login'/>
                             </button>
                         </div>
-                        <div className='col-12'>
-                            <span><FormattedMessage id='login.forgot-password'/>?</span>
+                        <div className='col-12 div-support'>
+                            <span className='span-support'><FormattedMessage id='login.forgot-password'/>?</span>
+                            <span className='span-support' onClick={() => {this.toggleUserModal()}}><FormattedMessage id='login.register'/>!</span>
                         </div>
                     </div>
                 </div>

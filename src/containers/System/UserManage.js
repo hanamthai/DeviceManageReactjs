@@ -55,14 +55,14 @@ class UserManage extends Component {
             this.setState({isLoading: false})
             if (error.response) {
                 if (error.response.data) {
-                    if (error.response.data.msg === 'Token has expired'){
+                    if (error?.response?.data?.msg === 'Token has expired'){
                         alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                         this.props.LoginAgain()
-                    } else if (error.response.status === 401){
-                        alert(error.response.data.message)
+                    } else if (error?.response?.status === 401){
+                        alert(error?.response?.data?.message)
                     }
                     else {
-                        this.setState({isToast: true, toastMsg: error.response.data.message})
+                        this.setState({isToast: true, toastMsg: error?.response?.data?.message})
                     }
                 }
             }
@@ -92,12 +92,12 @@ class UserManage extends Component {
             }
         } catch(error) {
             this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
+            if (error?.response?.data?.msg === 'Token has expired'){
                 alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                 this.props.LoginAgain()
             }
-            else if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
+            else if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
             }
         }
     }
@@ -113,12 +113,12 @@ class UserManage extends Component {
             }
         } catch(error) {
             this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
+            if (error?.response?.data?.msg === 'Token has expired'){
                 alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                 this.props.LoginAgain()
             }
-            else if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
+            else if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
             }
         }
     }
@@ -149,12 +149,12 @@ class UserManage extends Component {
             }
         } catch(error) {
             this.setState({isLoading: false})
-            if (error.response.data.msg === 'Token has expired'){
+            if (error?.response?.data?.msg === 'Token has expired'){
                 alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                 this.props.LoginAgain()
             }
-            if (error.response.status != 200) {
-                alert("Error: " + error.response.data.message)
+            if (error?.response?.status != 200) {
+                alert("Error: " + error?.response?.data?.message)
             }
         }
     }

@@ -45,11 +45,11 @@ class UserHistory extends Component {
             this.setState({isLoading: false})
             if (error.response) {
                 if (error.response.data) {
-                    if (error.response.data.msg === 'Token has expired'){
+                    if (error?.response?.data?.msg === 'Token has expired'){
                         alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                         this.props.LoginAgain()
-                    } else if (error.response.status === 401){
-                        alert(error.response.data.message)
+                    } else if (error?.response?.status === 401){
+                        alert(error?.response?.data?.message)
                     }
                 }
             }
@@ -79,11 +79,11 @@ class UserHistory extends Component {
             this.setState({isLoading: false})
             if (error.response) {
                 if (error.response.data) {
-                    if (error.response.data.msg === 'Token has expired'){
+                    if (error?.response?.data?.msg === 'Token has expired'){
                         alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                         this.props.LoginAgain()
-                    } else if (error.response.status != 200){
-                        alert(error.response.data.message)
+                    } else if (error?.response?.status != 200){
+                        alert(error?.response?.data?.message)
                     }
                 }
             }
@@ -111,11 +111,11 @@ class UserHistory extends Component {
             this.setState({isLoading: false})
             if (error.response) {
                 if (error.response.data) {
-                    if (error.response.data.msg === 'Token has expired'){
+                    if (error?.response?.data?.msg === 'Token has expired'){
                         alert("Phiên đăng nhập đã hết hạn, vui lòng đăng nhập lại!!")
                         this.props.LoginAgain()
-                    } else if (error.response.status != 200){
-                        alert(error.response.data.message)
+                    } else if (error?.response?.status != 200){
+                        alert(error?.response?.data?.message)
                     }
                 }
             }
