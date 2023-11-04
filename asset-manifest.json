@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/DeviceManageReactjs/static/css/main.b091fa3f.chunk.css",
-    "main.js": "/DeviceManageReactjs/static/js/main.9125e029.chunk.js",
-    "main.js.map": "/DeviceManageReactjs/static/js/main.9125e029.chunk.js.map",
-    "runtime-main.js": "/DeviceManageReactjs/static/js/runtime-main.6528b2f6.js",
-    "runtime-main.js.map": "/DeviceManageReactjs/static/js/runtime-main.6528b2f6.js.map",
-    "static/css/2.81ec1778.chunk.css": "/DeviceManageReactjs/static/css/2.81ec1778.chunk.css",
-    "static/js/2.aee2e61f.chunk.js": "/DeviceManageReactjs/static/js/2.aee2e61f.chunk.js",
-    "static/js/2.aee2e61f.chunk.js.map": "/DeviceManageReactjs/static/js/2.aee2e61f.chunk.js.map",
-    "index.html": "/DeviceManageReactjs/index.html",
-    "static/css/2.81ec1778.chunk.css.map": "/DeviceManageReactjs/static/css/2.81ec1778.chunk.css.map",
-    "static/css/main.b091fa3f.chunk.css.map": "/DeviceManageReactjs/static/css/main.b091fa3f.chunk.css.map",
-    "static/js/2.aee2e61f.chunk.js.LICENSE.txt": "/DeviceManageReactjs/static/js/2.aee2e61f.chunk.js.LICENSE.txt",
-    "static/media/styles.scss": "/DeviceManageReactjs/static/media/fa-solid-900.d279d01b.svg"
+    "main.css": "/login/static/css/main.982b001e.chunk.css",
+    "main.js": "/login/static/js/main.c60cfa0e.chunk.js",
+    "main.js.map": "/login/static/js/main.c60cfa0e.chunk.js.map",
+    "runtime-main.js": "/login/static/js/runtime-main.0d5485ee.js",
+    "runtime-main.js.map": "/login/static/js/runtime-main.0d5485ee.js.map",
+    "static/css/2.81ec1778.chunk.css": "/login/static/css/2.81ec1778.chunk.css",
+    "static/js/2.aee2e61f.chunk.js": "/login/static/js/2.aee2e61f.chunk.js",
+    "static/js/2.aee2e61f.chunk.js.map": "/login/static/js/2.aee2e61f.chunk.js.map",
+    "index.html": "/login/index.html",
+    "static/css/2.81ec1778.chunk.css.map": "/login/static/css/2.81ec1778.chunk.css.map",
+    "static/css/main.982b001e.chunk.css.map": "/login/static/css/main.982b001e.chunk.css.map",
+    "static/js/2.aee2e61f.chunk.js.LICENSE.txt": "/login/static/js/2.aee2e61f.chunk.js.LICENSE.txt",
+    "static/media/styles.scss": "/login/static/media/fa-solid-900.d279d01b.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6528b2f6.js",
+    "static/js/runtime-main.0d5485ee.js",
     "static/css/2.81ec1778.chunk.css",
     "static/js/2.aee2e61f.chunk.js",
-    "static/css/main.b091fa3f.chunk.css",
-    "static/js/main.9125e029.chunk.js"
+    "static/css/main.982b001e.chunk.css",
+    "static/js/main.c60cfa0e.chunk.js"
   ]
 }
