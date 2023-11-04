@@ -86,7 +86,10 @@
         "input-password": "Nhập mật khẩu của bạn",
         "userpass-wrong": "Sai tên đăng nhập hoặc mật khẩu!",
         "register": "Đăng ký tài khoản",
-        "register-form-title": "Tạo mới tài khoản" 
+        "register-form-title": "Tạo mới tài khoản",
+        "form-forgot-password-title": "Lấy lại mật khẩu",
+        "form-forgot-password-email": "Nhập email bạn đã đăng ký",
+        "form-forgot-password-btn-submit": "Gửi"
     },
     "menu": {
         "system": {

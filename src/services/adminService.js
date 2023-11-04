@@ -47,4 +47,12 @@ const handleRegisterNewAccountService = (val) => {
     )
 }
 
-export {handleParentInfo, handleEditParentService, handleBlockParentService, handleRegisterNewAccountService}
+const handleForgotPasswordService = (val) => {
+    return axios.post(`v1/resetPassword?email=${val['email']}`)
+}
+
+export {handleParentInfo, 
+    handleEditParentService, 
+    handleBlockParentService, 
+    handleRegisterNewAccountService, 
+    handleForgotPasswordService}
